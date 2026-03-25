@@ -1,14 +1,15 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const cron = require("node-cron");
 const fs = require("fs");
+require('dotenv').config();
 
 const cherry = require("./stores/cherry");
 const grandj = require("./stores/grandj");
 const vault = require("./stores/vault");
 const getthosemons = require("./stores/getthosemons");
 
-const TOKEN = "MTQ4NjMxNzI5MzIxNzY0ODczMQ.GMpj6Q.QPTD9YHtrTS8oCWg4n_AhNuE7vd4E6c3unMt8I";
-const CHANNEL_ID = "1486321482895327234";
+const TOKEN = process.env.DISCORD_API_TOKEN;
+const CHANNEL_ID = process.env.DISCORD_CHANNEL_API_ID;
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
